@@ -65,12 +65,19 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+
+        .full-width {
+            width:60%;
+
+        }
+
+
     </style>
 </head>
 <body>
 <div class="flex-center position-ref full-height">
 
-    <div class="content">
+    <div class="content full-width">
 
         <div class="title m-b-md">
           @yield('content')

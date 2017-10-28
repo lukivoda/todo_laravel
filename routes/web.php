@@ -30,9 +30,23 @@ Route::get('/todos',[
 
 
 Route::get("/todos/delete/{id}",[
-   
+
     'uses' => 'TodosController@delete',
     'as'   => 'todos.delete'
+]);
+
+Route::get("/todos/edit/{id}",[
+
+    'uses' => 'TodosController@edit',
+    'as'   => 'todos.edit'
+]);
+
+
+Route::post('/todos/update/{id}',[
+
+    'uses' => 'TodosController@update',
+    'as'   => 'todos.update'
+
 ]);
 
 

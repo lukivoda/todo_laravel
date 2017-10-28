@@ -25,6 +25,8 @@
 
         <a href="{{route('todos.delete',['id' =>$todo->id])}}" class="btn btn-danger">X</a>
 
+        <a href="{{route('todos.edit',['id' =>$todo->id])}}" class="btn btn-warning">Edit</a>
+
         <hr>
     @endforeach
 
