@@ -32,8 +32,6 @@ class TodosController extends Controller
 
        Todo::find($id)->delete();
 
-
-
         return redirect()->back();
     }
     
@@ -55,6 +53,18 @@ class TodosController extends Controller
         $todo->save();
 
         return redirect()->route('todos.index');
+    }
+    
+    
+    public function completed($id) {
+        
+        $todo = Todo::find($id);
+        
+        $todo->completed = 1;
+        
+        $todo->save();
+        
+        return redirect()->back();
     }
     
     

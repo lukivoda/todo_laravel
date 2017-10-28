@@ -58,3 +58,10 @@ Route::post('/create/todo',[
 ]);
 
 
+Route::get("/todos/completed/{id}",[
+
+    'uses' => 'TodosController@completed',
+    'as'   => 'todos.completed'
+]);
+
+
