@@ -27,5 +27,15 @@ class TodosController extends Controller
         return redirect()->back();//ne vraca pak na index stranata
 
     }
+
+    public function delete($id){
+
+       Todo::find($id)->delete();
+
+
+
+        return redirect()->back();
+    }
+    
     
 }
