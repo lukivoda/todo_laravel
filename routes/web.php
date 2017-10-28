@@ -20,3 +20,18 @@ Route::get('/new',[
     'uses'=>'PagesController@newPage'
 
 ]);
+
+
+Route::get('/todos',[
+    
+    'uses' => 'TodosController@index',
+    'as'   => 'todos.index'
+]);
+
+
+Route::post('/create/todo',[
+
+    'uses' => 'TodosController@store',
+    'as'   => 'todos.create'
+
+]);

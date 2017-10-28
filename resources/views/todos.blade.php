@@ -1,0 +1,28 @@
+@extends('layout')
+
+
+@section('content')
+
+  <div class="row">
+      <div class="col-lg-offset-3 col-lg-6">
+
+          <form action="{{route('todos.create')}}" method="post">
+
+              {{csrf_field()}}
+
+          <input name="todo" type="text" class="form-control input-lg" placeholder="Create new todo">
+
+
+          </form>
+      </div>
+
+
+  </div>
+
+    <hr>
+    @foreach($todos as $todo)
+        {{$todo->todo}}
+        <hr>
+    @endforeach
+
+@endsection
