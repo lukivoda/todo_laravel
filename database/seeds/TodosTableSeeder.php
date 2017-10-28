@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class TodosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(TodosTableSeeder::class);//povikuvanje na seeder-ot od glavnata seeder klasa
+        factory('App\Todo',7)->create();//formirame 7 reda od kolonata todo
     }
 }
