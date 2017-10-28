@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Todo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class TodosController extends Controller
 {
@@ -23,6 +24,8 @@ class TodosController extends Controller
         $todo->todo = $request->todo;
 
         $todo->save();
+        
+        Session::flash('success','Your todo was created');
 
         return redirect()->back();//ne vraca pak na index stranata
 
@@ -31,6 +34,8 @@ class TodosController extends Controller
     public function delete($id){
 
        Todo::find($id)->delete();
+
+        Session::flash('success','Your todo was deleted');
 
         return redirect()->back();
     }
@@ -51,6 +56,8 @@ class TodosController extends Controller
         $todo->todo =  $request->todo;
 
         $todo->save();
+
+        Session::flash('success','Your todo was updated');
 
         return redirect()->route('todos.index');
     }
